@@ -1,1 +1,1 @@
-# sh_bot
+Ushbu bot telegramdagi ishlarni yengillashtirish uchun yaratilgan
