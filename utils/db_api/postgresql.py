@@ -37,7 +37,7 @@ class Database:
         CREATE TABLE IF NOT EXISTS phone_numbers (
                 id SERIAL,
                 phone_number TEXT PRIMARY KEY,
-                telegram_id INTEGER,
+                telegram_id BIGINT,
                 datetime TIMESTAMP,
                 paid BOOLEAN,
                 donate BOOLEAN
@@ -45,8 +45,8 @@ class Database:
         CREATE TABLE IF NOT EXISTS temp (
                 id SERIAL PRIMARY KEY,
                 phone_number TEXT,
-                telegram_id INTEGER,
-                member_id INTEGER,
+                telegram_id BIGINT,
+                member_id BIGINT,
                 taken BOOLEAN,
                 donate BOOLEAN,
                 code INTEGER
