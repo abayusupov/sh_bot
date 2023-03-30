@@ -7,7 +7,7 @@ ketti_button = InlineKeyboardButton(text="Kod ketti", callback_data='ketti')
 already_voted_button = InlineKeyboardButton(
     text='Ilgari ovoz berilgan', callback_data='already_voted')
 
-number_inline_keyboard.add(me_button, ketti_button)
+number_inline_keyboard.add(me_button, ketti_button, already_voted_button)
 
 
 after_inline_keyboard = InlineKeyboardMarkup(row_width=2)
