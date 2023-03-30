@@ -80,8 +80,11 @@ async def after_button_handler(query: types.CallbackQuery):
             datetime = getTimeInTashkent()
             donate = await db.get_donate_using_code(code)
             await db.add_number(phone_number, user_id, datetime, False, donate)
-
-            await bot.send_message(user_id, "Tabriklaymiz, siz muvaffaqiyatli ovoz berdingiz. Hisobingiz yaqin fursatlarda to'ldiriladi.", reply_markup=finish_state_keyboard)
+            
+            if not donate:
+                await bot.send_message(user_id, "Tabriklaymiz, siz muvaffaqiyatli ovoz berdingiz. Hisobingiz yaqin fursatlarda to'ldiriladi.", reply_markup=finish_state_keyboard)
+            else:
+                await bot.send_message(user_id, "Katta rahmat, siz muvaffaqiyatli ovoz berdingiz. Yo'limizning yaxshilanishiga yordam berganingizda minnatdormiz!.", reply_markup=finish_state_keyboard)
             # move user to the number state
 
             await bot.send_message(group_chat_id, f'{query.from_user.full_name} {phone_number} raqamini muvaffaqiyatli kiritdi')
